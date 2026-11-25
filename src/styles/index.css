@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #5700C8;
+  --color-brand-deep: #39008F;
+  --color-brand-electric: #8B19FF;
+  --color-brand-magenta: #D41485;
+  --color-navy-950: #080B27;
+  --color-navy-900: #11143A;
+  --color-surface-light: #F8F8FC;
+  --color-ink-body: #34344A;
+  --color-ink-muted: #77778D;
+
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink-body);
+    background-color: #ffffff;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--color-brand-electric);
+    outline-offset: 2px;
+  }
+}
+
+.cbsoft-gradient {
+  background: linear-gradient(135deg, #5700C8 0%, #8B19FF 52%, #D41485 100%);
+}
+
+.cbsoft-gradient-hover:hover {
+  background: linear-gradient(135deg, #39008F 0%, #5700C8 48%, #D41485 100%);
+}
+
+.cbsoft-gradient-text {
+  background: linear-gradient(135deg, #8B19FF 0%, #D41485 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cbsoft-hero-bg {
+  background-color: #080B27;
+  background-image:
+    radial-gradient(60% 60% at 78% 22%, rgba(139, 25, 255, 0.28) 0%, rgba(8, 11, 39, 0) 70%),
+    radial-gradient(45% 50% at 15% 80%, rgba(212, 20, 133, 0.18) 0%, rgba(8, 11, 39, 0) 70%),
+    radial-gradient(50% 45% at 50% 50%, rgba(87, 0, 200, 0.22) 0%, rgba(8, 11, 39, 0) 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

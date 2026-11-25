@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cbsoft — Future is Now | Software & Digital Solutions</title>
+    <meta
+      name="description"
+      content="Cbsoft builds innovative software, web platforms, mobile apps, and digital solutions that empower people, businesses, and communities."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cbsoft" />
+    <meta property="og:title" content="Cbsoft — Future is Now | Software & Digital Solutions" />
+    <meta
+      property="og:description"
+      content="Smart Solutions. Greater Opportunities. Explore Cbsoft software development, web, mobile, UI/UX design, and IT consulting services."
+    />
+    <meta property="og:image" content="/logocbsoft.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cbsoft — Future is Now | Software & Digital Solutions" />
+    <meta
+      name="twitter:description"
+      content="Cbsoft builds innovative software and technology solutions to empower people, businesses, and communities."
+    />
+    <meta name="twitter:image" content="/logocbsoft.jpeg" />
+    <link rel="icon" type="image/jpeg" href="/logocbsoft.jpeg" />
+    <link rel="apple-touch-icon" href="/logocbsoft.jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cbsoft",
+        "slogan": "Future is Now",
+        "description": "Cbsoft is an innovative technology team focused on building digital solutions that empower people, businesses, and communities.",
+        "logo": "/logocbsoft.jpeg"
+      }
+    </script>
+    <script>
+      (function () {
+        function isExtensionMetaMaskError(reasonOrEvent) {
+          var message = '';
+          var stack = '';
+          var filename = '';
+          if (reasonOrEvent) {
+            if (typeof reasonOrEvent === 'string') {
+              message = reasonOrEvent;
+            } else {
+              message =
+                reasonOrEvent.message ||
+                (reasonOrEvent.reason && reasonOrEvent.reason.message) ||
+                String(reasonOrEvent.reason || '');
+              stack =
+                reasonOrEvent.stack ||
+                (reasonOrEvent.reason && reasonOrEvent.reason.stack) ||
+                (reasonOrEvent.error && reasonOrEvent.error.stack) ||
+                '';
+              filename = reasonOrEvent.filename || '';
+            }
+          }
+          return (
+            filename.indexOf('chrome-extension://') === 0 ||
+            stack.indexOf('chrome-extension://') !== -1 ||
+            message.indexOf('Failed to connect to MetaMask') !== -1
+          );
+        }
+
+        window.addEventListener(
+          'error',
+          function (event) {
+            if (isExtensionMetaMaskError(event)) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+
+        window.addEventListener(
+          'unhandledrejection',
+          function (event) {
+            if (isExtensionMetaMaskError(event)) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
