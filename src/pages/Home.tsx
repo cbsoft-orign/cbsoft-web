@@ -6,6 +6,7 @@ import { LaptopMockup } from '../components/Brand/LaptopMockup';
 import { ResponsiveImage } from '../components/Media/ResponsiveImage';
 import { IntroModal } from '../components/Modals/IntroModal';
 import { CtaBanner } from '../components/Sections/CtaBanner';
+import { TeamSection } from '../components/Sections/TeamSection';
 import { ServiceIcon } from '../components/ServiceIcon';
 import { COMPANY_INFO, VALUE_PROPOSITIONS, WHY_CHOOSE_CBSOFT } from '../data/company';
 import { PRODUCTS } from '../data/products';
@@ -318,7 +319,10 @@ export function Home() {
         </div>
       </section>
 
-      {/* Section G: Call to Action */}
+      {/* Section G: Animated Team Section */}
+      <TeamSection background="white" showAboutLink />
+
+      {/* Section H: Call to Action */}
       <CtaBanner
         heading="Have an Idea? Let's Build Something Amazing."
         description="Whether you're starting a new project or looking to transform your business, Cbsoft is ready to help."

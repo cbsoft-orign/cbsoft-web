@@ -64,6 +64,36 @@
     radial-gradient(50% 45% at 50% 50%, rgba(87, 0, 200, 0.22) 0%, rgba(8, 11, 39, 0) 75%);
 }
 
+@keyframes teamCardReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes spotlightFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-team-reveal {
+  animation: teamCardReveal 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-spotlight-in {
+  animation: spotlightFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

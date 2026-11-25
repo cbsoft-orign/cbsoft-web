@@ -1,10 +1,8 @@
-import { ExternalLink } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from '../components/SocialIcons';
 import workspaceImg from '../assets/images/about_workspace_1795619441269.jpg';
 import { ResponsiveImage } from '../components/Media/ResponsiveImage';
 import { CtaBanner } from '../components/Sections/CtaBanner';
+import { TeamSection } from '../components/Sections/TeamSection';
 import { COMPANY_INFO } from '../data/company';
-import { TEAM_MEMBERS } from '../data/team';
 import { usePageSeo } from '../utils/seo';
 
 export function About() {
@@ -142,95 +140,7 @@ export function About() {
       </section>
 
       {/* Team */}
-      <section className="bg-surface-light py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold tracking-wider text-brand-primary uppercase">
-              Leadership & Roles
-            </p>
-            <h2 className="mt-2 font-display text-3xl font-bold text-navy-950 sm:text-4xl">
-              Our Team
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-              Team role profiles below use editable placeholder data stored in{' '}
-              <code className="font-mono text-xs">src/data/team.ts</code> and can be updated with
-              member photographs and profile links without modifying page components.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {TEAM_MEMBERS.map((member) => (
-              <article
-                key={member.id}
-                className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6"
-              >
-                <div>
-                  <div className="flex items-center gap-4">
-                    {member.photoUrl ? (
-                      <ResponsiveImage
-                        src={member.photoUrl}
-                        alt={member.fullName}
-                        className="h-14 w-14 rounded-full object-cover border border-slate-200"
-                        wrapperClassName="h-14 w-14 rounded-full"
-                        fallbackTitle={member.initials}
-                      />
-                    ) : (
-                      <div className="cbsoft-gradient flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-display text-base font-bold text-white">
-                        {member.initials}
-                      </div>
-                    )}
-                    <div className="min-w-0">
-                      <h3 className="font-display text-base font-bold text-navy-950">
-                        {member.fullName}
-                      </h3>
-                      <p className="text-xs font-medium text-brand-primary">{member.role}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-ink-body">{member.bio}</p>
-                </div>
-
-                {(member.linkedinUrl || member.githubUrl || member.websiteUrl) && (
-                  <div className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
-                    {member.linkedinUrl && (
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.fullName} LinkedIn`}
-                        className="text-ink-muted hover:text-brand-primary transition-colors"
-                      >
-                        <LinkedInIcon className="h-4 w-4" />
-                      </a>
-                    )}
-                    {member.githubUrl && (
-                      <a
-                        href={member.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.fullName} GitHub`}
-                        className="text-ink-muted hover:text-brand-primary transition-colors"
-                      >
-                        <GitHubIcon className="h-4 w-4" />
-                      </a>
-                    )}
-                    {member.websiteUrl && (
-                      <a
-                        href={member.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.fullName} Portfolio`}
-                        className="text-ink-muted hover:text-brand-primary transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                      </a>
-                    )}
-                  </div>
-                )}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection background="light" showAboutLink={false} />
 
       {/* Our Approach */}
       <section className="py-20">
