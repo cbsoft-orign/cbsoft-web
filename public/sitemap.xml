@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
   <url><loc>https://cbsoftlabs.com</loc><priority>1.0</priority></url>
-  <url><loc>https://cbsoftlabs.comabout</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices</loc><priority>0.9</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/web-development</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/mobile-development</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/software-development</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/ui-ux-design</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/digital-solutions</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comservices/it-consulting</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comproducts</loc><priority>0.9</priority></url>
-  <url><loc>https://cbsoftlabs.comproducts/cloudpulse-ops</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comproducts/civiclink-mobile</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comproducts/devflow-studio</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comproducts/nexus-data-bridge</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comblog</loc><priority>0.8</priority></url>
-  <url><loc>https://cbsoftlabs.comblog/engineering-resilient-web-platforms</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comblog/scalable-architecture-for-growing-teams</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comblog/human-centered-design-in-enterprise-software</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comblog/pragmatic-digital-transformation-roadmap</loc><priority>0.7</priority></url>
-  <url><loc>https://cbsoftlabs.comcontact</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services</loc><priority>0.9</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/web-development</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/mobile-development</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/software-development</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/ui-ux-design</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/digital-solutions</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/services/it-consulting</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/products</loc><priority>0.9</priority></url>
+  <url><loc>https://cbsoftlabs.com/products/cloudpulse-ops</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/products/civiclink-mobile</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/products/devflow-studio</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/products/nexus-data-bridge</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/blog</loc><priority>0.8</priority></url>
+  <url><loc>https://cbsoftlabs.com/blog/engineering-resilient-web-platforms</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/blog/scalable-architecture-for-growing-teams</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/blog/human-centered-design-in-enterprise-software</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/blog/pragmatic-digital-transformation-roadmap</loc><priority>0.7</priority></url>
+  <url><loc>https://cbsoftlabs.com/contact</loc><priority>0.8</priority></url>
 </urlset>
