@@ -1,61 +1,59 @@
-import memberOneImg from '../assets/images/team_member_one_1795623451017.jpg';
-import memberTwoImg from '../assets/images/team_member_two_1795623451885.jpg';
-import memberThreeImg from '../assets/images/team_member_three_1795623452329.jpg';
-import memberFourImg from '../assets/images/team_member_four_1795623453901.jpg';
-
 export interface TeamMember {
   id: string;
   fullName: string;
   role: string;
   initials: string;
   bio: string;
-  focusAreas: string[];
-  photoUrl: string;
-  linkedinUrl?: string;
-  githubUrl?: string;
-  websiteUrl?: string;
+  email: string;
+  githubUrl: string;
+  xUrl: string;
+  /** Optional portrait image path when official member headshots are provided. */
+  photoUrl?: string;
 }
 
 /**
- * Editable team directory placeholder data.
- * Update member names, roles, biographies, profile images, and social URLs here without touching UI components.
+ * Official Cbsoft team directory.
+ * Update member biographies, contact addresses, social handles, or optional photoUrl values here.
  */
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: 'lead-architect',
-    fullName: 'Clara Bennett',
-    role: 'Principal Software Architect',
-    initials: 'CB',
-    bio: 'Leads full-stack system architecture, TypeScript engineering standards, and resilient cloud infrastructure across Cbsoft client platforms.',
-    focusAreas: ['System Architecture', 'TypeScript & Node.js', 'Cloud Reliability'],
-    photoUrl: memberOneImg,
+    id: 'nizeyimana-placide',
+    fullName: 'NIZEYIMANA Placide',
+    role: 'Founder & CEO',
+    initials: 'NP',
+    bio: 'Leads Cbsoft’s vision, technical direction, and strategic partnerships—guiding the delivery of reliable software and digital solutions.',
+    email: 'nizeyimanaplacide2@gmail.com',
     githubUrl: 'https://github.com/cbsoft-orign',
+    xUrl: 'https://x.com/nizeyimanaplacide',
   },
   {
-    id: 'product-design-lead',
-    fullName: 'Nadia Vance',
-    role: 'Head of UI/UX & Product Design',
-    initials: 'NV',
-    bio: 'Shapes human-centered design systems, interactive prototypes, and WCAG AA accessible interfaces that simplify complex workflows.',
-    focusAreas: ['Design Systems', 'User Research', 'Accessible UI'],
-    photoUrl: memberTwoImg,
+    id: 'kabuye-gaby-prince',
+    fullName: 'KABUYE Gaby Prince',
+    role: 'Full-Stack Developer',
+    initials: 'KP',
+    bio: 'Builds end-to-end web platforms, backend APIs, and scalable data integrations engineered for reliability and speed.',
+    email: 'kabuye.prince@cbsoftlabs.com',
+    githubUrl: 'https://github.com/kabuyeprince',
+    xUrl: 'https://x.com/kabuyeprince',
   },
   {
-    id: 'mobile-solutions-lead',
-    fullName: 'David Mercer',
-    role: 'Lead Mobile & Full-Stack Engineer',
-    initials: 'DM',
-    bio: 'Architects responsive web portals and offline-ready mobile applications engineered for speed, security, and everyday reliability.',
-    focusAreas: ['Web & Mobile Apps', 'API Engineering', 'Performance'],
-    photoUrl: memberThreeImg,
+    id: 'sangwa-ineza-niella',
+    fullName: 'SANGWA INEZA Niella',
+    role: 'UI/UX Developer',
+    initials: 'SN',
+    bio: 'Crafts human-centered interfaces, cohesive design systems, and accessible frontend experiences tailored for clarity.',
+    email: 'sangwa.niella@cbsoftlabs.com',
+    githubUrl: 'https://github.com/sangwaniella',
+    xUrl: 'https://x.com/sangwaniella',
   },
   {
-    id: 'consulting-delivery-lead',
-    fullName: 'Elena Brooks',
-    role: 'IT Consulting & Delivery Lead',
-    initials: 'EB',
-    bio: 'Partners closely with client leadership from discovery through launch to align technical roadmaps with measurable business outcomes.',
-    focusAreas: ['Technical Strategy', 'Digital Solutions', 'Client Delivery'],
-    photoUrl: memberFourImg,
+    id: 'uwajye-ishimwe-bernisse',
+    fullName: 'UWAJYE ISHIMWE Bernisse',
+    role: 'System Analyst',
+    initials: 'UB',
+    bio: 'Translates business requirements into structured system architectures, technical specifications, and quality assurance plans.',
+    email: 'uwajye.bernisse@cbsoftlabs.com',
+    githubUrl: 'https://github.com/uwajyebernisse',
+    xUrl: 'https://x.com/uwajyebernisse',
   },
 ];
