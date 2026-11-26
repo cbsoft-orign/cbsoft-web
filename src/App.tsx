@@ -10,6 +10,7 @@ import { ProductDetails } from './pages/ProductDetails';
 import { Products } from './pages/Products';
 import { ServiceDetails } from './pages/ServiceDetails';
 import { Services } from './pages/Services';
+import { Sitemap } from './pages/Sitemap';
 
 export function App() {
   return (
@@ -25,6 +26,7 @@ export function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>

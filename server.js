@@ -18,6 +18,83 @@ function sanitizeString(value, maxLen = 2000) {
   return value.trim().slice(0, maxLen);
 }
 
+const DEFAULT_SITE_URL = 'https://www.cbsoftlabs.com';
+const SITEMAP_LASTMOD = '2026-11-26';
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function resolveSiteUrl() {
+  const configured = sanitizeString(process.env.SITE_URL, 300).replace(/\/+$/, '');
+  return configured || DEFAULT_SITE_URL;
+}
+
+async function extractSlugsFromFile(relativePath, fallbackSlugs) {
+  try {
+    const content = await fs.readFile(path.join(__dirname, relativePath), 'utf-8');
+    const matches = [...content.matchAll(/slug:\s*'([a-z0-9-]+)'/g)].map((m) => m[1]);
+    return matches.length > 0 ? [...new Set(matches)] : fallbackSlugs;
+  } catch {
+    return fallbackSlugs;
+  }
+}
+
+async function getSitemapEntries() {
+  const [serviceSlugs, productSlugs, blogSlugs] = await Promise.all([
+    extractSlugsFromFile('src/data/services.ts', [
+      'web-development',
+      'mobile-development',
+      'software-development',
+      'ui-ux-design',
+      'digital-solutions',
+      'it-consulting',
+    ]),
+    extractSlugsFromFile('src/data/products.ts', [
+      'cloudpulse-ops',
+      'civiclink-mobile',
+      'devflow-studio',
+      'nexus-data-bridge',
+    ]),
+    extractSlugsFromFile('src/data/blog.ts', [
+      'engineering-resilient-web-platforms',
+      'scalable-architecture-for-growing-teams',
+      'human-centered-design-in-enterprise-software',
+      'pragmatic-digital-transformation-roadmap',
+    ]),
+  ]);
+
+  return [
+    { path: '/', changefreq: 'weekly', priority: '1.0' },
+    { path: '/about', changefreq: 'monthly', priority: '0.8' },
+    { path: '/services', changefreq: 'weekly', priority: '0.9' },
+    ...serviceSlugs.map((slug) => ({
+      path: `/services/${slug}`,
+      changefreq: 'monthly',
+      priority: '0.8',
+    })),
+    { path: '/products', changefreq: 'weekly', priority: '0.9' },
+    ...productSlugs.map((slug) => ({
+      path: `/products/${slug}`,
+      changefreq: 'monthly',
+      priority: '0.7',
+    })),
+    { path: '/blog', changefreq: 'weekly', priority: '0.8' },
+    ...blogSlugs.map((slug) => ({
+      path: `/blog/${slug}`,
+      changefreq: 'monthly',
+      priority: '0.7',
+    })),
+    { path: '/contact', changefreq: 'monthly', priority: '0.8' },
+    { path: '/sitemap', changefreq: 'weekly', priority: '0.5' },
+  ];
+}
+
 async function startServer() {
   const app = express();
   app.use(express.json({ limit: '64kb' }));
@@ -27,6 +104,29 @@ async function startServer() {
       status: 'ok',
       contactIntegrationConfigured: Boolean(process.env.CONTACT_WEBHOOK_URL),
     });
+  });
+
+  app.get('/sitemap.xml', async (_req, res) => {
+    const baseUrl = resolveSiteUrl();
+    const entries = await getSitemapEntries();
+    const xml = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+      ...entries.map(
+        (entry) =>
+          `  <url>\n    <loc>${escapeXml(`${baseUrl}${entry.path}`)}</loc>\n    <lastmod>${SITEMAP_LASTMOD}</lastmod>\n    <changefreq>${entry.changefreq}</changefreq>\n    <priority>${entry.priority}</priority>\n  </url>`
+      ),
+      '</urlset>',
+      '',
+    ].join('\n');
+
+    res.status(200).set('Content-Type', 'application/xml; charset=utf-8').send(xml);
+  });
+
+  app.get('/robots.txt', (_req, res) => {
+    const baseUrl = resolveSiteUrl();
+    const txt = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
+    res.status(200).set('Content-Type', 'text/plain; charset=utf-8').send(txt);
   });
 
   app.post('/api/contact', async (req, res) => {

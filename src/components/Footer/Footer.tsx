@@ -173,7 +173,20 @@ export function Footer() {
           <p>
             &copy; {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
-          <p>{COMPANY_INFO.brandMessage}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link to="/sitemap" className="hover:text-white transition-colors">
+              Sitemap
+            </Link>
+            <a
+              href="/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              XML Sitemap
+            </a>
+            <span>{COMPANY_INFO.brandMessage}</span>
+          </div>
         </div>
       </div>
     </footer>
