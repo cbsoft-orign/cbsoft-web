@@ -89,7 +89,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Verify cross-device breakpoints, Lighthouse metrics, and production deployment.',
       },
     ],
-    relatedProductSlugs: ['cloudpulse-ops', 'nexus-data-bridge'],
+    relatedProductSlugs: ['ikobuild', 'toolmora', 'medibot'],
     faqs: [
       {
         question: 'Do you build both marketing websites and complex web applications?',
@@ -150,7 +150,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Validate across Android and iOS form factors and prepare store builds.',
       },
     ],
-    relatedProductSlugs: ['civiclink-mobile'],
+    relatedProductSlugs: ['unimarket', 'noza-ai'],
     faqs: [
       {
         question: 'Should we choose cross-platform or native mobile development?',
@@ -211,7 +211,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Ship containerized services with monitoring hooks and operational runbooks.',
       },
     ],
-    relatedProductSlugs: ['devflow-studio', 'cloudpulse-ops'],
+    relatedProductSlugs: ['noza-ai', 'autocut-ai', 'ikobuild'],
     faqs: [
       {
         question: 'Who owns the source code Cbsoft develops?',
@@ -272,7 +272,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Partner directly with frontend engineers to ensure pixel-accurate delivery.',
       },
     ],
-    relatedProductSlugs: ['civiclink-mobile', 'cloudpulse-ops'],
+    relatedProductSlugs: ['toolmora', 'unimarket'],
     faqs: [
       {
         question: 'Can Cbsoft audit and redesign an existing application interface?',
@@ -333,7 +333,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Onboard teams smoothly with clear guides and measurable KPIs.',
       },
     ],
-    relatedProductSlugs: ['nexus-data-bridge', 'civiclink-mobile'],
+    relatedProductSlugs: ['medibot', 'noza-ai'],
     faqs: [
       {
         question: 'How do you approach integrating with our existing tools?',
@@ -394,7 +394,7 @@ export const SERVICES: ServiceItem[] = [
         detail: 'Assist your leadership and engineering team during implementation.',
       },
     ],
-    relatedProductSlugs: ['devflow-studio', 'nexus-data-bridge'],
+    relatedProductSlugs: ['ikobuild', 'medibot'],
     faqs: [
       {
         question: 'Can we engage Cbsoft solely for an architecture audit before building?',

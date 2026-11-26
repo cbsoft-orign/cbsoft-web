@@ -93,23 +93,23 @@ export function Products() {
               </button>
             </div>
           ) : (
-            <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filteredProducts.map((product) => (
                 <article
                   key={product.slug}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:border-brand-primary/35 hover:shadow-lg hover:shadow-brand-primary/5"
+                  className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors hover:border-slate-300"
                 >
-                  <div className="aspect-[16/10] overflow-hidden bg-navy-950">
+                  <div className="aspect-[4/3] overflow-hidden border-b border-slate-100 bg-surface-light">
                     <ResponsiveImage
                       src={product.image}
                       alt={product.imageAlt}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover"
                       wrapperClassName="h-full w-full"
                       fallbackTitle={product.name}
                     />
                   </div>
 
-                  <div className="flex flex-1 flex-col justify-between p-7">
+                  <div className="flex flex-1 flex-col justify-between p-6">
                     <div>
                       <div className="flex items-center gap-2 text-xs font-medium text-ink-muted">
                         <span>{product.category}</span>
@@ -117,22 +117,22 @@ export function Products() {
                         <span className="font-semibold text-brand-primary">{product.status}</span>
                       </div>
 
-                      <h2 className="mt-2 font-display text-2xl font-bold text-navy-950">
+                      <h2 className="mt-2 font-display text-xl font-bold text-navy-950">
                         {product.name}
                       </h2>
-                      <p className="mt-2.5 text-sm leading-relaxed text-ink-body">
+                      <p className="mt-2 text-sm leading-relaxed text-ink-body">
                         {product.shortDescription}
                       </p>
 
                       <p className="mt-4 font-mono text-xs text-ink-muted">
-                        {product.technologies.join(' · ')}
+                        {product.technologies.slice(0, 4).join(' · ')}
                       </p>
                     </div>
 
-                    <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+                    <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
                       <Link
                         to={`/products/${product.slug}`}
-                        className="cbsoft-gradient cbsoft-gradient-hover inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all whitespace-nowrap"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-magenta transition-colors whitespace-nowrap"
                       >
                         View Details
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -142,10 +142,10 @@ export function Products() {
                           href={product.externalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-navy-950 hover:bg-surface-light transition-colors whitespace-nowrap"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-muted hover:text-navy-950 transition-colors whitespace-nowrap"
                         >
-                          Visit Product
-                          <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                          Visit
+                          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                         </a>
                       )}
                     </div>

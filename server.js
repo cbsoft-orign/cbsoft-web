@@ -56,10 +56,12 @@ async function getSitemapEntries() {
       'it-consulting',
     ]),
     extractSlugsFromFile('src/data/products.ts', [
-      'cloudpulse-ops',
-      'civiclink-mobile',
-      'devflow-studio',
-      'nexus-data-bridge',
+      'noza-ai',
+      'medibot',
+      'autocut-ai',
+      'toolmora',
+      'ikobuild',
+      'unimarket',
     ]),
     extractSlugsFromFile('src/data/blog.ts', [
       'engineering-resilient-web-platforms',

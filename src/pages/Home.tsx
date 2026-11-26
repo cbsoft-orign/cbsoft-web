@@ -223,17 +223,17 @@ export function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredProducts.map((product) => (
               <article
                 key={product.slug}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-150 hover:border-brand-primary/35 hover:shadow-lg hover:shadow-brand-primary/5"
+                className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors hover:border-slate-300"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-navy-950">
+                <div className="aspect-[4/3] overflow-hidden border-b border-slate-100 bg-surface-light">
                   <ResponsiveImage
                     src={product.image}
                     alt={product.imageAlt}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover"
                     wrapperClassName="h-full w-full"
                     fallbackTitle={product.name}
                   />
@@ -256,7 +256,7 @@ export function Home() {
                   <div className="mt-6 pt-4 border-t border-slate-100">
                     <Link
                       to={`/products/${product.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary hover:text-brand-magenta transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary hover:text-brand-magenta transition-colors"
                     >
                       View Details
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />

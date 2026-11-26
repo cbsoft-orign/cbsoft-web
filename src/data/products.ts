@@ -1,13 +1,14 @@
-import cloudpulseImg from '../assets/images/product_cloudpulse_1795619442549.jpg';
-import civiclinkImg from '../assets/images/product_civiclink_1795619442961.jpg';
-import devflowImg from '../assets/images/product_devflow_1795619443478.jpg';
-import nexusImg from '../assets/images/blog_scalable_systems_1795619443971.jpg';
+import nozaAiImg from '../assets/images/product_noza_ai_1795693818707.jpg';
+import medibotImg from '../assets/images/product_medibot_1795693818892.jpg';
+import autocutAiImg from '../assets/images/product_autocut_ai_1795693819061.jpg';
+import toolmoraImg from '../assets/images/product_toolmora_1795693819508.jpg';
+import ikobuildImg from '../assets/images/product_ikobuild_1795693819570.jpg';
+import unimarketImg from '../assets/images/product_unimarket_1795693820667.jpg';
 
 export type ProductCategory =
   | 'Web Applications'
   | 'Mobile Applications'
-  | 'Software Tools'
-  | 'Other Solutions';
+  | 'Software Tools';
 
 export type ProductStatus = 'Live' | 'In Development' | 'Coming Soon';
 
@@ -33,124 +34,177 @@ export interface ProductItem {
 
 export const PRODUCT_CATEGORIES: Array<'All Products' | ProductCategory> = [
   'All Products',
+  'Software Tools',
   'Web Applications',
   'Mobile Applications',
-  'Software Tools',
-  'Other Solutions',
 ];
 
 /**
- * Editable product portfolio data.
- * Sample entries below reflect active Cbsoft product initiatives and clearly mark non-live items as In Development or Coming Soon.
+ * Official Cbsoft product portfolio.
+ * Only proprietary products developed by Cbsoft are listed here.
  */
 export const PRODUCTS: ProductItem[] = [
   {
-    slug: 'cloudpulse-ops',
-    name: 'CloudPulse Ops',
-    category: 'Web Applications',
-    status: 'In Development',
-    featured: true,
-    shortDescription:
-      'A unified operations web portal for tracking service requests, team workloads, and client deliverables in one workspace.',
-    introduction:
-      'CloudPulse Ops is Cbsoft’s flagship operations web platform currently in active development. It brings project status tracking, SLA alerts, and client reporting into a single structured web interface.',
-    problemSolved:
-      'Growing teams often juggle spreadsheets, chat threads, and disconnected ticketing tools, leaving project managers without a clear real-time view of delivery health.',
-    keyFeatures: [
-      'Role-based workspace views for operations leads and client stakeholders',
-      'Structured request intake with automated priority routing',
-      'Milestone timeline tracking and deliverable sign-off logs',
-      'Exportable summary reports for weekly executive reviews',
-    ],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
-    targetUsers: [
-      'Software and digital service agencies',
-      'Internal IT and operations teams',
-      'Multi-branch service organizations',
-    ],
-    image: cloudpulseImg,
-    imageAlt: 'CloudPulse Ops web application dashboard interface displayed on a studio monitor',
-  },
-  {
-    slug: 'civiclink-mobile',
-    name: 'CivicLink Mobile',
-    category: 'Mobile Applications',
-    status: 'In Development',
-    featured: true,
-    shortDescription:
-      'A mobile-first service portal designed to connect communities and local organizations with accessible digital services.',
-    introduction:
-      'CivicLink Mobile streamlines how community members submit requests, view service updates, and access essential resources directly from their smartphones—even on low-bandwidth connections.',
-    problemSolved:
-      'Community programs and municipal services frequently rely on walk-in forms or desktop portals that exclude mobile-first users and create administrative backlogs.',
-    keyFeatures: [
-      'Accessible mobile request forms with offline draft persistence',
-      'Real-time status tracking for submitted inquiries and applications',
-      'Multilingual-ready UI architecture with high-contrast legibility',
-      'Lightweight data footprint optimized for entry-level smartphones',
-    ],
-    technologies: ['React Native', 'TypeScript', 'REST APIs', 'SQLite'],
-    targetUsers: [
-      'Community organizations and NGOs',
-      'Public service teams and local initiatives',
-      'Mobile-first end users seeking direct service access',
-    ],
-    image: civiclinkImg,
-    imageAlt: 'CivicLink Mobile service portal interface on a flagship smartphone',
-  },
-  {
-    slug: 'devflow-studio',
-    name: 'DevFlow Studio',
+    slug: 'noza-ai',
+    name: 'Noza AI',
     category: 'Software Tools',
-    status: 'Coming Soon',
+    status: 'Live',
     featured: true,
     shortDescription:
-      'Modular release-readiness and environment verification toolkit for full-stack TypeScript engineering teams.',
+      'Smart Stock, Instant Profit & Kinyarwanda Voice POS built for fast, accurate retail and wholesale operations.',
     introduction:
-      'DevFlow Studio is an upcoming Cbsoft developer tool focused on standardizing pre-deployment checks, environment variable validation, and release checklists across web projects.',
+      'Noza AI combines real-time inventory management, automated profit calculation, and Kinyarwanda voice-assisted point-of-sale workflows so shop owners and retail teams can record sales effortlessly and track margins instantly.',
     problemSolved:
-      'Teams lose valuable hours debugging staging and production deployments caused by missing environment keys, mismatched schemas, or inconsistent build steps.',
+      'Small and growing retail businesses often lose visibility into daily profits, stock shrinkage, and fast-moving items because manual ledgers and traditional POS tools are slow and disconnected from local workflows.',
     keyFeatures: [
-      'Automated .env contract verification against schema definitions',
-      'Pre-flight build, lint, and route health check orchestration',
-      'Clear human-readable diagnostic summaries for CI/CD pipelines',
-      'Zero-lock-in CLI and configuration format',
+      'Kinyarwanda voice-powered point-of-sale checkout and stock lookup',
+      'Instant daily profit, cost-of-goods, and margin reporting',
+      'Automated low-stock alerts and supplier restock tracking',
+      'Fast counter workflow designed for desktop, tablet, and mobile POS',
     ],
-    technologies: ['TypeScript', 'Node.js', 'CLI Tooling', 'Docker'],
+    technologies: ['TypeScript', 'React', 'Node.js', 'Voice AI', 'PostgreSQL'],
     targetUsers: [
-      'Full-stack software engineering teams',
-      'DevOps and release managers',
-      'Consultancies managing multiple client repositories',
+      'Retail shops, wholesalers, and minimarkets',
+      'Store managers tracking multi-item inventory and margins',
+      'Merchants seeking Kinyarwanda-first voice POS workflows',
     ],
-    image: devflowImg,
-    imageAlt: 'DevFlow Studio modular deployment architecture isometric visualization',
+    image: nozaAiImg,
+    imageAlt: 'Noza AI retail point-of-sale tablet displaying inventory analytics and voice waveform on a shop counter',
   },
   {
-    slug: 'nexus-data-bridge',
-    name: 'Nexus Data Bridge',
-    category: 'Other Solutions',
-    status: 'Coming Soon',
-    featured: false,
+    slug: 'medibot',
+    name: 'MediBot',
+    category: 'Web Applications',
+    status: 'Live',
+    featured: true,
     shortDescription:
-      'Lightweight integration middleware for synchronizing structured records across legacy tools and modern cloud APIs.',
+      'AI-driven pharmacy management, real-time locator, and patient engagement tools — built for scale and reliability.',
     introduction:
-      'Nexus Data Bridge provides a clean, auditable integration layer for organizations that need to keep CRM, billing, and operational databases synchronized without heavy enterprise middleware.',
+      'MediBot unifies pharmacy stock governance, expiry tracking, real-time pharmacy and medication discovery, and structured patient follow-ups inside a dependable healthcare operations platform.',
     problemSolved:
-      'Manual CSV exports and brittle one-off webhook scripts lead to stale records, duplicate entries, and silent synchronization failures.',
+      'Patients frequently struggle to locate stocked medications quickly while pharmacies deal with fragmented inventory records, expired batch risks, and manual patient communication.',
     keyFeatures: [
-      'Schema-validated field mapping between external REST APIs',
-      'Idempotent retry queues with clear failure diagnostics',
-      'Audit trail logging for every synchronized record',
-      'Configurable webhook adapters for custom internal systems',
+      'AI-assisted pharmacy inventory, batch, and expiry monitoring',
+      'Real-time pharmacy and medication availability locator',
+      'Automated patient engagement, refill reminders, and guidance',
+      'Role-based access controls built for multi-branch reliability',
     ],
-    technologies: ['Node.js', 'TypeScript', 'Webhooks', 'JSON Schema'],
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'AI Workflows'],
     targetUsers: [
-      'Businesses migrating off legacy software systems',
-      'Operations analysts automating cross-tool workflows',
-      'Engineering teams unifying third-party SaaS data',
+      'Community and hospital pharmacies',
+      'Patients searching for nearby verified medication availability',
+      'Healthcare operations teams managing multi-branch stock',
     ],
-    image: nexusImg,
-    imageAlt: 'Nexus Data Bridge layered architectural system visualization',
+    image: medibotImg,
+    imageAlt: 'MediBot tablet showing healthcare pharmacy locator map and inventory metrics on a modern pharmacy counter',
+  },
+  {
+    slug: 'autocut-ai',
+    name: 'AutoCut AI',
+    category: 'Software Tools',
+    status: 'Live',
+    featured: true,
+    shortDescription:
+      'Professional automatic video editor & YouTube timeline pipeline for faster, studio-grade content production.',
+    introduction:
+      'AutoCut AI streamlines post-production by analyzing raw footage, trimming silences, structuring multi-track timelines, and preparing clean exports tailored for YouTube and creator publishing pipelines.',
+    problemSolved:
+      'Video creators and media teams spend hours manually scrubbing raw recordings, removing dead air, and assembling repeatable timeline cuts before they can focus on storytelling.',
+    keyFeatures: [
+      'Automated silence removal, pacing detection, and smart scene cuts',
+      'Structured multi-track YouTube timeline assembly and export',
+      'Audio waveform leveling and clean caption timing alignment',
+      'Batch-friendly workflow engineered for recurring creator channels',
+    ],
+    technologies: ['TypeScript', 'FFmpeg', 'Media Pipelines', 'Node.js', 'React'],
+    targetUsers: [
+      'YouTube creators and podcast producers',
+      'Digital media studios and marketing teams',
+      'Educators publishing structured video courses',
+    ],
+    image: autocutAiImg,
+    imageAlt: 'AutoCut AI multi-track video timeline and audio waveform editor on an ultrawide studio monitor',
+  },
+  {
+    slug: 'toolmora',
+    name: 'ToolMora',
+    category: 'Software Tools',
+    status: 'Live',
+    featured: true,
+    shortDescription:
+      'High-speed, client-side online tools for students, creators, and developers. No file limits, 100% private.',
+    introduction:
+      'ToolMora delivers a fast, browser-native suite of document, image, formatting, and developer utilities that execute locally on your device—eliminating server uploads, file size caps, and privacy compromises.',
+    problemSolved:
+      'Everyday online utilities often impose arbitrary file limits, slow upload queues, intrusive ads, or upload sensitive files to third-party servers.',
+    keyFeatures: [
+      '100% client-side execution inside the browser with zero server uploads',
+      'No file size limits or daily usage paywalls for core tools',
+      'Instant utilities for PDFs, media, code formatting, and conversions',
+      'Lightweight, distraction-free interface built for speed',
+    ],
+    technologies: ['React', 'TypeScript', 'WebAssembly', 'Web Workers', 'Tailwind CSS'],
+    targetUsers: [
+      'University students handling assignments and documents',
+      'Content creators converting and optimizing assets locally',
+      'Software developers needing fast privacy-safe utilities',
+    ],
+    image: toolmoraImg,
+    imageAlt: 'ToolMora laptop workspace displaying modular client-side utility tool cards',
+  },
+  {
+    slug: 'ikobuild',
+    name: 'IkoBuild',
+    category: 'Web Applications',
+    status: 'Live',
+    featured: true,
+    shortDescription:
+      'Production-ready SaaS platform that lets you generate full-stack applications from natural language prompts.',
+    introduction:
+      'IkoBuild turns plain-language product specifications into structured full-stack web applications—complete with clean frontend components, backend API routes, database schemas, and live preview workflows.',
+    problemSolved:
+      'Moving from an initial software idea to a working, well-structured full-stack codebase normally requires weeks of boilerplate setup, wiring, and deployment configuration.',
+    keyFeatures: [
+      'Prompt-to-full-stack generation covering UI, APIs, and data models',
+      'Live split-screen code inspection and interactive application preview',
+      'Modular TypeScript architecture ready for production extension',
+      'Built-in project iteration and clean code export workflows',
+    ],
+    technologies: ['TypeScript', 'React', 'Node.js', 'AI Codegen', 'Cloud SaaS'],
+    targetUsers: [
+      'Founders and product teams prototyping SaaS products',
+      'Software engineers accelerating full-stack delivery',
+      'Digital agencies shipping custom client portals faster',
+    ],
+    image: ikobuildImg,
+    imageAlt: 'IkoBuild split-screen full-stack application builder showing structured code and live UI preview',
+  },
+  {
+    slug: 'unimarket',
+    name: 'UniMarket',
+    category: 'Mobile Applications',
+    status: 'Live',
+    featured: true,
+    shortDescription:
+      'Campus e-commerce app for university students to buy needed equipment and educational tools right on campus.',
+    introduction:
+      'UniMarket connects university students with verified campus sellers and peers so they can discover, compare, and purchase laptops, engineering calculators, textbooks, lab gear, and study tools reliably within their campus community.',
+    problemSolved:
+      'Students often waste time searching unverified classifieds or distant shops for essential academic equipment, facing high delivery costs and unreliable product quality.',
+    keyFeatures: [
+      'Campus-specific marketplace organized by academic equipment and tools',
+      'Direct peer and campus vendor listings for books, electronics, and lab kits',
+      'Fast mobile discovery with clear pricing and campus pickup coordination',
+      'Student-focused experience built for everyday affordability and trust',
+    ],
+    technologies: ['React Native', 'TypeScript', 'Node.js', 'REST APIs', 'PostgreSQL'],
+    targetUsers: [
+      'University and college students across faculties',
+      'Campus bookstores and student-run equipment vendors',
+      'Graduating students reselling textbooks and study hardware',
+    ],
+    image: unimarketImg,
+    imageAlt: 'UniMarket campus e-commerce app on a smartphone alongside a laptop, textbook, and scientific calculator',
   },
 ];
 

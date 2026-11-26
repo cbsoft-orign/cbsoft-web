@@ -24,7 +24,7 @@ const CORE_PAGES = [
   {
     path: '/products',
     title: 'Products',
-    description: 'Explore CloudPulse Ops, CivicLink Mobile, DevFlow Studio, and Nexus Data Bridge.',
+    description: 'Explore Noza AI, MediBot, AutoCut AI, ToolMora, IkoBuild, and UniMarket.',
   },
   {
     path: '/blog',
